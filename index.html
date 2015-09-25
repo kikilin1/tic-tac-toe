@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Tic Tac Toe!</title>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <style>
+            table{
+                width: 60%;
+                margin: 0 auto;
+            }
+            td{
+                width:33%;
+                border: 2px solid black;
+                text-align: center;
+                font-size: 40px;
+                padding: 55px;
+                
+        </style>
+    </head>
+    <body>
+        <table>
+        <centre>
+            </centre>
+
+            <tr>
+               <td></td>
+               <td></td>
+               <td></td>
+                
+            </tr>
+             <tr>
+               <td></td>
+               <td></td>
+               <td></td>
+                
+            </tr>
+            <tr>
+               <td></td>
+               <td></td>
+               <td></td>
+                
+            </tr>
+        </table>
+        <button onclick="xClick();">Fill grid with X</button>
+        <button onclick="oClick();">Fill grid with o</button>
+        <button onclick="clearClick();">Fill grid with reset</button>
+        <button onclick="changeColor();">change BG color</button>
+        <script>
+            var clickCounter=0;
+            attachEvents();
+            function attachEvents(){
+                $("td").on("click", function(){
+                    if (clickCounter % 2 == 0){
+                        $(this).html("x");
+                    }
+                    else{
+                        $(this).html("0");
+                    }
+                clickCounter++;
+                $(this).unbind("click");
+                    if ( $("Mode").html() === "1"){
+                        //put an 0 somewhere
+                    }
+                });
+            }
+            function xClick(){
+                $("td").html("x");
+            }
+            function oClick(){
+                $("td").html("0");
+            }
+            function clearClick(){
+                clickCounter =0;
+                $("td").unbind("click");
+                attachEvents();
+                $("td").html("");
+            }
+            function toggleMode(){
+                var curMode = $("#mode").html();
+                if (curMode === "1")
+                    $("#mode").html("2");
+            function changeColor(){
+                var C = Math.round(Math.random()*255);
+                var color ="rgb(" + C + "," + C + "," + C + ")";
+                $("td").css("background-color", color);
+                if (c < 75){
+                    $("td").css("color", "white");
+                    
+               }
+            }
+            
+            
+        </script>
+    </body>
+</html>
+            
+            
+            
+                
+        </script>
+    </body>
+    
+</html>

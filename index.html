@@ -20,7 +20,10 @@
     <body>
         <table>
         <centre>
+            <H1>Current Mode: <span id ="mode">2</span>player</H1>
             </centre>
+            <center>
+            <button onclick=""</center>
 
             <tr>
                <td></td>
@@ -76,6 +79,7 @@
                 $("td").html("");
             }
             function toggleMode(){
+                resetGrid();
                 var curMode = $("#mode").html();
                 if (curMode === "1")
                     $("#mode").html("2");
